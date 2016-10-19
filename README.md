@@ -1,4 +1,4 @@
-# uwegerdes/baseimage
+# Docker uwegerdes/baseimage
 
 A common base image for my Dockerfiles to save some disk space and build time.
 

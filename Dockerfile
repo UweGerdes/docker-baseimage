@@ -2,13 +2,14 @@ FROM ubuntu:latest
 MAINTAINER entwicklung@uwegerdes.de
 
 ARG APT_PROXY
-ARG TZ=Europe/Berlin
+ARG TZ=UTC
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ ${TZ}
 
 RUN if [ -n "${APT_PROXY}" ]; then \
 		echo "Acquire::http { Proxy \"${APT_PROXY}\"; };" >> /etc/apt/apt.conf.d/01proxy; \
+		echo "Acquire::https { Proxy \"https://\"; };" >> /etc/apt/apt.conf.d/01proxy; \
 	fi
 
 RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
@@ -24,3 +25,5 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
 					vim \
 					wget && \
 	rm -rf /var/lib/apt/lists/*
+
+CMD [ "true" ]
