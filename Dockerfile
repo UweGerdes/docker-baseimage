@@ -17,8 +17,10 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
 	apt-get update && \
 	apt-get dist-upgrade -y && \
 	apt-get install -y \
+					bzip2 \
 					ca-certificates \
 					curl \
+					git \
 					gosu \
 					net-tools \
 					sudo \

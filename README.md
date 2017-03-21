@@ -20,3 +20,16 @@ $ docker build -t uwegerdes/baseimage \
 	--build-arg TZ="Europe/Berlin" \
 	.
 ```
+
+## Usage
+
+Use this baseimage in other `Dockerfile`s:
+
+```
+FROM uwegerdes/baseimage
+```
+
+## Settings
+
+The build-args are saved and used by all images depending on this image.
+
