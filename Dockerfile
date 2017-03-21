@@ -21,6 +21,7 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
 					curl \
 					gosu \
 					net-tools \
+					sudo \
 					unzip \
 					vim \
 					wget && \
