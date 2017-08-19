@@ -1,3 +1,5 @@
+# base image with some essentials, and optional timezone and apt proxy cache (build arg)
+
 FROM ubuntu:latest
 MAINTAINER entwicklung@uwegerdes.de
 
@@ -17,16 +19,18 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
 	apt-get update && \
 	apt-get dist-upgrade -y && \
 	apt-get install -y \
-					bzip2 \
-					ca-certificates \
-					curl \
-					git \
-					gosu \
-					net-tools \
-					sudo \
-					unzip \
-					vim \
-					wget && \
+				bzip2 \
+				ca-certificates \
+				curl \
+				git \
+				gosu \
+				net-tools \
+				ssh \
+				sudo \
+				unzip \
+				vim \
+				wget && \
+	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-CMD [ "true" ]
+CMD [ "/bin/bash" ]
