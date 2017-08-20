@@ -27,6 +27,7 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends && \
 				net-tools \
 				ssh \
 				sudo \
+				tzdata \
 				unzip \
 				vim \
 				wget && \
