@@ -37,3 +37,4 @@ RUN if [ -n "${APT_PROXY}" ]; then \
 	rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]
+
