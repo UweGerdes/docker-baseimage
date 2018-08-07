@@ -18,6 +18,7 @@ Build the image with (mind the dot in the last line):
 $ docker build -t uwegerdes/baseimage \
 	--build-arg APT_PROXY="http://$(hostname -i):3142" \
 	--build-arg TZ="Europe/Berlin" \
+	--build-arg TERM="${TERM}" \
 	.
 ```
 
