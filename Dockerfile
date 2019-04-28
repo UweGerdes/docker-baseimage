@@ -5,7 +5,7 @@ MAINTAINER entwicklung@uwegerdes.de
 
 ARG APT_PROXY
 ARG TERM=xterm
-ARG TZ=UTC
+ARG TZ=Etc/UTC
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM=${TERM}
@@ -33,6 +33,10 @@ RUN if [ -n "${APT_PROXY}" ]; then \
 				unzip \
 				vim \
 				wget && \
+	echo $TZ > /etc/timezone && \
+	rm /etc/localtime && \
+	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+	dpkg-reconfigure -f noninteractive tzdata && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
