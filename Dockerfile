@@ -5,7 +5,7 @@ MAINTAINER entwicklung@uwegerdes.de
 
 ARG APT_PROXY
 ARG TERM=xterm
-ARG TZ=Etc/UTC
+ARG TZ=UTC
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM=${TERM}

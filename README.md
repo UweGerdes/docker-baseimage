@@ -16,6 +16,7 @@ Build the image with (mind the dot in the last line):
 
 ```bash
 $ docker build -t uwegerdes/baseimage \
+	-t uwegerdes/baseimage:2022-08-21 \
 	--build-arg APT_PROXY="http://$(hostname -i):3142" \
 	--build-arg TZ="Europe/Berlin" \
 	--build-arg TERM="${TERM}" \
