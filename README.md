@@ -4,6 +4,17 @@ A common base image for my Dockerfiles to save some disk space and build time.
 
 The base for this image is ubuntu:latest but it might change in the future.
 
+## Install Docker
+
+For Windows or Mac users: open [https://www.docker.com/get-started](https://www.docker.com/get-started) in your browser.
+
+### Linux users: install Docker with:
+
+```bash
+curl -sSL https://get.docker.com | sh
+sudo adduser [yourusername] docker
+```
+
 ## Building with settings
 
 If you want to build it with other settings load the Dockerfile in an empty directory, perhaps edit it to your needs.
