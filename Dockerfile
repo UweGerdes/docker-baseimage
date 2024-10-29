@@ -1,15 +1,16 @@
 # base image with some essentials, and optional timezone and apt proxy cache (build arg)
 
 FROM ubuntu:latest
-MAINTAINER entwicklung@uwegerdes.de
+
+LABEL org.opencontainers.image.authors="entwicklung@uwegerdes.de"
 
 ARG APT_PROXY
 ARG TERM=xterm
 ARG TZ=UTC
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 ENV TERM=${TERM}
-ENV TZ ${TZ}
+ENV TZ=${TZ}
 
 RUN if [ -n "${APT_PROXY}" ]; then \
 		echo "Acquire::http { Proxy \"${APT_PROXY}\"; };" >> /etc/apt/apt.conf.d/01proxy; \
